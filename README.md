@@ -1,6 +1,6 @@
 # Bitely 🍪
 
-A playful, responsive recipe search app with a cookie mascot and vibrant orange theme.
+A playful, responsive recipe search app.
 
 ## Features
 
