@@ -28,5 +28,5 @@ React • Vite • Tailwind CSS • TheMealDB API
 
 ---
 
-**Developed by Anuj Kakumanu**
+**Developed by Anuj, Arjun, and Sanjay**
 
