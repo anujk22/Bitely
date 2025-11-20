@@ -5,7 +5,7 @@ A playful, responsive recipe search app.
 ## Features
 
 - **Modern orange gradient theme**
-- **Responsive grid layout**: Cards auto-scale and center no matter the result count
+- **Responsive grid layout**: Cards auto-scale no matter the result count
 - **Easy meal search** by name or ingredient
 - **Clear recipe cards**: Photo, instructions, ingredients
 - **Built with React + Tailwind CSS** for speed and style
