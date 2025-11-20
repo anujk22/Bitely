@@ -22,10 +22,10 @@ const SearchForm = ({ searchTerm, setSearchTerm, onSearch, isLoading }) => {
             bg-white/95 backdrop-blur-md
             text-black text-lg shadow-xl
             transition-all duration-300 ease-out
-            focus:outline-none focus:ring-4 focus:ring-orange-400/50
+            focus:outline-none focus:ring-4 focus:ring-amber-600/40
             focus:bg-white focus:shadow-2xl
             placeholder:text-gray-400
-            ${isFocused ? 'ring-4 ring-orange-400/50' : ''}
+            ${isFocused ? 'ring-4 ring-amber-600/40' : ''}
             ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}
           `}
         />
@@ -34,8 +34,8 @@ const SearchForm = ({ searchTerm, setSearchTerm, onSearch, isLoading }) => {
         type="submit"
         disabled={isLoading}
         className={`
-          bg-gradient-to-r from-orange-500 to-orange-600 
-          hover:from-orange-600 hover:to-orange-700
+          bg-gradient-to-r from-amber-600 to-amber-700
+          hover:from-amber-700 hover:to-amber-800
           px-10 py-5 rounded-r-2xl
           text-white font-bold text-lg
           transition-all duration-300 ease-out

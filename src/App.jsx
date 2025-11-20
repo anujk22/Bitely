@@ -42,12 +42,12 @@ const App = () => {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-100 font-sans text-gray-900 relative">
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-400/30 via-transparent to-yellow-300/20 pointer-events-none" />
+    <main className="min-h-screen bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-100 font-sans text-gray-900 relative flex flex-col">
+      {/* Static subtle overlay - consistent color */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-300/20 via-transparent to-yellow-200/10 pointer-events-none" />
       
       {/* Hero Split Section */}
-      <section className="relative min-h-[85vh] flex items-center py-12 z-10">
+      <section className="relative flex-1 flex items-center py-12 z-10 max-h-[calc(100vh-120px)]">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
@@ -57,7 +57,7 @@ const App = () => {
                 <img
                   src={BitelyCookie}
                   alt="Bitely Cookie Mascot"
-                  className="w-80 h-80 md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] xl:w-[700px] xl:h-[700px] object-contain cookie-float-large drop-shadow-2xl"
+                  className="w-80 h-80 md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] object-contain cookie-float-large drop-shadow-2xl"
                   draggable={false}
                 />
                 <div className="cookie-glow" />
@@ -97,18 +97,20 @@ const App = () => {
       </section>
 
       {/* Results Section */}
-      <section className="w-full px-6 relative z-10 pb-12">
-        {isLoading && (
-          <div className="flex justify-center my-8">
-            <div className="spinner" />
-          </div>
-        )}
-        
-        <RecipeList meals={meals} isLoading={isLoading} />
-      </section>
+      {meals.length > 0 && (
+        <section className="w-full px-6 relative z-10 pb-12">
+          {isLoading && (
+            <div className="flex justify-center my-8">
+              <div className="spinner" />
+            </div>
+          )}
+          
+          <RecipeList meals={meals} isLoading={isLoading} />
+        </section>
+      )}
 
-      {/* Footer */}
-      <footer className="relative z-10 mt-16 py-8 border-t border-orange-300/30">
+      {/* Footer - Always visible */}
+      <footer className="relative z-10 mt-auto py-6 border-t border-orange-300/30 bg-gradient-to-b from-transparent to-orange-200/20">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-3">
@@ -125,7 +127,7 @@ const App = () => {
             
             <div className="text-center md:text-right">
               <p className="text-amber-900 font-medium">
-                Made by <span className="font-bold">Anuj Kakumanu</span>
+                Developed by <span className="font-bold">Anuj Kakumanu</span>
               </p>
               <p className="text-amber-800 text-sm mt-1">
                 © 2025 Bitely. Powered by TheMealDB API
