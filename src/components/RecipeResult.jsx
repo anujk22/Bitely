@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const RecipeResult = ({ meal }) => {
+const RecipeResult = ({ meal, index }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
     const ingredient = meal[`strIngredient${i}`];
@@ -10,24 +12,51 @@ const RecipeResult = ({ meal }) => {
     }
   }
 
+  const truncatedInstructions = meal.strInstructions.slice(0, 150) + '...';
+
   return (
-    <div className="bg-gradient-to-br from-orange-500 via-yellow-200 to-orange-300 shadow-xl rounded-3xl p-6 text-gray-900 w-full max-w-lg flex flex-col items-center">
-      <h2 className="text-2xl font-extrabold mb-2 text-center drop-shadow-sm">{meal.strMeal}</h2>
-      <img
-        src={meal.strMealThumb}
-        alt={`Image of ${meal.strMeal}`}
-        className="rounded-2xl mb-3 w-56 h-40 object-cover"
-      />
-      <div className="w-full">
-        <p className="text-base leading-relaxed whitespace-pre-line mb-2">
-          {meal.strInstructions}
-        </p>
-        <h3 className="font-semibold mb-1 text-base">Ingredients:</h3>
-        <ul className="list-disc list-inside text-sm">
-          {ingredients.map((ing, idx) => (
-            <li key={idx}>{ing}</li>
-          ))}
-        </ul>
+    <div 
+      className="recipe-card glass-card-recipe group"
+      style={{ '--index': index }}
+    >
+      <div className="relative overflow-hidden rounded-2xl mb-4">
+        <img
+          src={meal.strMealThumb}
+          alt={`Image of ${meal.strMeal}`}
+          className="w-full h-56 object-cover transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-2"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+
+      <h2 className="text-2xl font-extrabold mb-3 text-gray-900 drop-shadow-sm group-hover:text-orange-600 transition-colors duration-300">
+        {meal.strMeal}
+      </h2>
+
+      <div className="w-full space-y-3">
+        <div className="text-sm leading-relaxed text-gray-700">
+          {isExpanded ? meal.strInstructions : truncatedInstructions}
+        </div>
+        
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="text-orange-600 font-semibold text-sm hover:text-orange-700 transition-colors duration-200 hover:underline"
+        >
+          {isExpanded ? 'Show Less' : 'Read More'}
+        </button>
+
+        <div className="pt-3 border-t border-gray-300/50">
+          <h3 className="font-bold mb-2 text-base text-gray-900 flex items-center gap-2">
+            <span className="text-orange-500">🥘</span>
+            Ingredients:
+          </h3>
+          <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 max-h-32 overflow-y-auto custom-scrollbar">
+            {ingredients.map((ing, idx) => (
+              <li key={idx} className="hover:text-orange-600 transition-colors duration-200">
+                {ing}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
