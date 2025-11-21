@@ -127,7 +127,7 @@ const App = () => {
             
             <div className="text-center md:text-right">
               <p className="text-amber-900 font-medium">
-                Developed by <span className="font-bold">Anuj Kakumanu</span>
+                Developed by <span className="font-bold">Anuj, Arjun, and Sanjay</span>
               </p>
               <p className="text-amber-800 text-sm mt-1">
                 © 2025 Bitely. Powered by TheMealDB API
