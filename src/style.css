@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================
-   KEYFRAME ANIMATIONS
+   COOKIE KEYFRAME ANIMATIONS :D
    ============================================ */
 
 @keyframes cookieFloatLarge {
@@ -66,10 +66,6 @@
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
-
-/* ============================================
-   HERO SECTION
-   ============================================ */
 
 .hero-cookie-container {
   animation: slideInLeft 1s ease-out;
