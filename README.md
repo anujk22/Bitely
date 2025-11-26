@@ -2,6 +2,8 @@
 
 **Your new favorite way to discover delicious recipes from around the world.**
 
+<img width="1728" height="716" alt="bitely" src="https://github.com/user-attachments/assets/099e7355-84da-45c6-8a63-762ca29bdfb1" />
+
 Tired of scrolling through endless recipe blogs just to find out if you have the ingredients? Bitely cuts through the noise. Just search for a meal, and instantly get the full recipe with ingredients, instructions, and a mouth-watering photo—all on one clean card.
 
 ## Why Bitely?
